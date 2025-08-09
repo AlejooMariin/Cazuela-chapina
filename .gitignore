@@ -1,0 +1,78 @@
+#########################
+# Logs
+#########################
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+#########################
+# Node / Frontend
+#########################
+node_modules
+dist
+dist-ssr
+*.local
+
+# Vite / React env files
+.env
+.env.*
+
+#########################
+# Backend (.NET)
+#########################
+bin/
+obj/
+*.user
+*.suo
+*.swp
+*.vs/
+.vscode/
+*.DS_Store
+*.log
+
+# Configuración sensible
+appsettings.Development.json
+appsettings.*.json
+
+#########################
+# Flutter (opcional móvil)
+#########################
+mobile/cazuela-app/build/
+mobile/cazuela-app/.dart_tool/
+mobile/cazuela-app/.flutter-plugins
+mobile/cazuela-app/.flutter-plugins-dependencies
+mobile/cazuela-app/.packages
+mobile/cazuela-app/pubspec.lock
+
+#########################
+# Editor directories and files
+#########################
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+#########################
+# Sistema operativo
+#########################
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
+
+#########################
+# Otros
+#########################
+*.tmp
+*.bak
+*.swp
