@@ -17,9 +17,14 @@
             "url": {
               "raw": "https//localhost:5250/api/tamales",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","tamales"]
+              "path": [
+                "api",
+                "tamales"
+              ]
             }
           }
         },
@@ -27,13 +32,23 @@
           "name": "Create Tamal",
           "request": {
             "method": "POST",
-            "header": [{"key": "Content-Type","value": "application/json"}],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "https//localhost:5250/api/tamales",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","tamales"]
+              "path": [
+                "api",
+                "tamales"
+              ]
             },
             "body": {
               "mode": "raw",
@@ -54,9 +69,14 @@
             "url": {
               "raw": "https//localhost:5250/api/bebidas",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","bebidas"]
+              "path": [
+                "api",
+                "bebidas"
+              ]
             }
           }
         },
@@ -64,13 +84,23 @@
           "name": "Create Bebida",
           "request": {
             "method": "POST",
-            "header": [{"key": "Content-Type","value": "application/json"}],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "https//localhost:5250/api/bebidas",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","bebidas"]
+              "path": [
+                "api",
+                "bebidas"
+              ]
             },
             "body": {
               "mode": "raw",
@@ -91,9 +121,14 @@
             "url": {
               "raw": "https//localhost:5250/api/productos",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","productos"]
+              "path": [
+                "api",
+                "productos"
+              ]
             }
           }
         },
@@ -101,13 +136,23 @@
           "name": "Create Producto",
           "request": {
             "method": "POST",
-            "header": [{"key": "Content-Type","value": "application/json"}],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "https//localhost:5250/api/productos",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","productos"]
+              "path": [
+                "api",
+                "productos"
+              ]
             },
             "body": {
               "mode": "raw",
@@ -126,11 +171,36 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https//localhost:5250/api/combos",
+              "raw": "http://localhost:5250/api/combos",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","combos"]
+              "path": [
+                "api",
+                "combos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Combo by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/combos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "combos",
+                "1"
+              ]
             }
           }
         },
@@ -138,17 +208,76 @@
           "name": "Create Combo",
           "request": {
             "method": "POST",
-            "header": [{"key": "Content-Type","value": "application/json"}],
-            "url": {
-              "raw": "https//localhost:5250/api/combos",
-              "protocol": "http",
-              "host": ["localhost"],
-              "port": "5250",
-              "path": ["api","combos"]
-            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"nombre\": \"Fiesta Patronal\",\n  \"tamalesIds\": [1, 2],\n  \"bebidasIds\": [1]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5250/api/combos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "combos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Combo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"nombre\": \"Fiesta Patronal Modificado\",\n  \"tamalesIds\": [1],\n  \"bebidasIds\": [1, 2]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5250/api/combos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "combos",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Delete Combo",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/combos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "combos",
+                "1"
+              ]
             }
           }
         }
@@ -165,9 +294,14 @@
             "url": {
               "raw": "https//localhost:5250/api/inventario",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","inventario"]
+              "path": [
+                "api",
+                "inventario"
+              ]
             }
           }
         },
@@ -175,13 +309,23 @@
           "name": "Create Materia Prima",
           "request": {
             "method": "POST",
-            "header": [{"key": "Content-Type","value": "application/json"}],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "https//localhost:5250/api/inventario",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","inventario"]
+              "path": [
+                "api",
+                "inventario"
+              ]
             },
             "body": {
               "mode": "raw",
@@ -202,9 +346,14 @@
             "url": {
               "raw": "https//localhost:5250/api/sucursales",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","sucursales"]
+              "path": [
+                "api",
+                "sucursales"
+              ]
             }
           }
         },
@@ -212,13 +361,23 @@
           "name": "Create Sucursal",
           "request": {
             "method": "POST",
-            "header": [{"key": "Content-Type","value": "application/json"}],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "https//localhost:5250/api/sucursales",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","sucursales"]
+              "path": [
+                "api",
+                "sucursales"
+              ]
             },
             "body": {
               "mode": "raw",
@@ -239,9 +398,14 @@
             "url": {
               "raw": "https//localhost:5250/api/ventas",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","ventas"]
+              "path": [
+                "api",
+                "ventas"
+              ]
             }
           }
         },
@@ -249,13 +413,23 @@
           "name": "Create Venta",
           "request": {
             "method": "POST",
-            "header": [{"key": "Content-Type","value": "application/json"}],
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
             "url": {
               "raw": "https//localhost:5250/api/ventas",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "5250",
-              "path": ["api","ventas"]
+              "path": [
+                "api",
+                "ventas"
+              ]
             },
             "body": {
               "mode": "raw",
