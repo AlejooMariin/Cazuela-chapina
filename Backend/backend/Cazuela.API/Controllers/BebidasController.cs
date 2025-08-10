@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CazuelaChapina.Data;
 using CazuelaChapina.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CazuelaChapina.Controllers
 {
@@ -30,9 +28,7 @@ namespace CazuelaChapina.Controllers
             var bebida = await _context.Bebidas.FindAsync(id);
 
             if (bebida == null)
-            {
                 return NotFound();
-            }
 
             return bebida;
         }
@@ -50,9 +46,7 @@ namespace CazuelaChapina.Controllers
         public async Task<IActionResult> PutBebida(int id, Bebida bebida)
         {
             if (id != bebida.Id)
-            {
                 return BadRequest();
-            }
 
             _context.Entry(bebida).State = EntityState.Modified;
 
@@ -62,14 +56,10 @@ namespace CazuelaChapina.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!BebidaExists(id))
-                {
+                if (!_context.Bebidas.Any(e => e.Id == id))
                     return NotFound();
-                }
                 else
-                {
                     throw;
-                }
             }
 
             return NoContent();
@@ -80,19 +70,12 @@ namespace CazuelaChapina.Controllers
         {
             var bebida = await _context.Bebidas.FindAsync(id);
             if (bebida == null)
-            {
                 return NotFound();
-            }
 
             _context.Bebidas.Remove(bebida);
             await _context.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        private bool BebidaExists(int id)
-        {
-            return _context.Bebidas.Any(e => e.Id == id);
         }
     }
 }

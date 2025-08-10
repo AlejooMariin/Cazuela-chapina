@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CazuelaChapina.Data;
 using CazuelaChapina.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CazuelaChapina.Controllers
 {
@@ -23,10 +21,6 @@ namespace CazuelaChapina.Controllers
         {
             return await _context.Ventas
                 .Include(v => v.Items)
-                .ThenInclude(i => i.Tamal)
-                .Include(v => v.Items)
-                .ThenInclude(i => i.Bebida)
-                .Include(v => v.Sucursal)
                 .ToListAsync();
         }
 
@@ -35,16 +29,10 @@ namespace CazuelaChapina.Controllers
         {
             var venta = await _context.Ventas
                 .Include(v => v.Items)
-                .ThenInclude(i => i.Tamal)
-                .Include(v => v.Items)
-                .ThenInclude(i => i.Bebida)
-                .Include(v => v.Sucursal)
                 .FirstOrDefaultAsync(v => v.Id == id);
 
             if (venta == null)
-            {
                 return NotFound();
-            }
 
             return venta;
         }
@@ -62,9 +50,7 @@ namespace CazuelaChapina.Controllers
         public async Task<IActionResult> PutVenta(int id, Venta venta)
         {
             if (id != venta.Id)
-            {
                 return BadRequest();
-            }
 
             _context.Entry(venta).State = EntityState.Modified;
 
@@ -75,13 +61,9 @@ namespace CazuelaChapina.Controllers
             catch (DbUpdateConcurrencyException)
             {
                 if (!_context.Ventas.Any(e => e.Id == id))
-                {
                     return NotFound();
-                }
                 else
-                {
                     throw;
-                }
             }
 
             return NoContent();
@@ -92,9 +74,7 @@ namespace CazuelaChapina.Controllers
         {
             var venta = await _context.Ventas.FindAsync(id);
             if (venta == null)
-            {
                 return NotFound();
-            }
 
             _context.Ventas.Remove(venta);
             await _context.SaveChangesAsync();

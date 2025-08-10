@@ -1,0 +1,269 @@
+{
+  "info": {
+    "name": "Cazuela Chapina API",
+    "_postman_id": "e33c2579-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "description": "CRUD APIs para Cazuela Chapina",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tamales",
+      "item": [
+        {
+          "name": "Get All Tamales",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https//localhost:5250/api/tamales",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","tamales"]
+            }
+          }
+        },
+        {
+          "name": "Create Tamal",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type","value": "application/json"}],
+            "url": {
+              "raw": "https//localhost:5250/api/tamales",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","tamales"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"masa\": \"Maíz\",\n  \"relleno\": \"Pollo\",\n  \"envoltura\": \"Hoja de maíz\",\n  \"picante\": true,\n  \"precio\": 20.5\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bebidas",
+      "item": [
+        {
+          "name": "Get All Bebidas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https//localhost:5250/api/bebidas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","bebidas"]
+            }
+          }
+        },
+        {
+          "name": "Create Bebida",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type","value": "application/json"}],
+            "url": {
+              "raw": "https//localhost:5250/api/bebidas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","bebidas"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tamano\": 0,\n  \"tipo\": 1,\n  \"endulzadoCon\": 0,\n  \"toppingAdicional\": 1,\n  \"precio\": 15.0\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Productos",
+      "item": [
+        {
+          "name": "Get All Productos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https//localhost:5250/api/productos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","productos"]
+            }
+          }
+        },
+        {
+          "name": "Create Producto",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type","value": "application/json"}],
+            "url": {
+              "raw": "https//localhost:5250/api/productos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","productos"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Tamal Pollo\",\n  \"descripcion\": \"Tamal tradicional de pollo\",\n  \"precio\": 20.5\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Combos",
+      "item": [
+        {
+          "name": "Get All Combos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https//localhost:5250/api/combos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","combos"]
+            }
+          }
+        },
+        {
+          "name": "Create Combo",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type","value": "application/json"}],
+            "url": {
+              "raw": "https//localhost:5250/api/combos",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","combos"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Fiesta Patronal\",\n  \"tamalesIds\": [1, 2],\n  \"bebidasIds\": [1]\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Inventario",
+      "item": [
+        {
+          "name": "Get All Materias Primas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https//localhost:5250/api/inventario",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","inventario"]
+            }
+          }
+        },
+        {
+          "name": "Create Materia Prima",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type","value": "application/json"}],
+            "url": {
+              "raw": "https//localhost:5250/api/inventario",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","inventario"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Masa de Maíz\",\n  \"cantidad\": 100,\n  \"unidad\": \"kg\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sucursales",
+      "item": [
+        {
+          "name": "Get All Sucursales",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https//localhost:5250/api/sucursales",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","sucursales"]
+            }
+          }
+        },
+        {
+          "name": "Create Sucursal",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type","value": "application/json"}],
+            "url": {
+              "raw": "https//localhost:5250/api/sucursales",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","sucursales"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Sucursal Central\",\n  \"direccion\": \"Av. Principal #123\",\n  \"telefono\": \"555-123456\"\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ventas",
+      "item": [
+        {
+          "name": "Get All Ventas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https//localhost:5250/api/ventas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","ventas"]
+            }
+          }
+        },
+        {
+          "name": "Create Venta",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type","value": "application/json"}],
+            "url": {
+              "raw": "https//localhost:5250/api/ventas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5250",
+              "path": ["api","ventas"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fecha\": \"2025-08-10T12:00:00\",\n  \"sucursalId\": 1,\n  \"total\": 250.00,\n  \"items\": [\n    {\n      \"productoId\": 1,\n      \"cantidad\": 2,\n      \"precioUnitario\": 50.00\n    },\n    {\n      \"productoId\": 2,\n      \"cantidad\": 3,\n      \"precioUnitario\": 50.00\n    }\n  ]\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

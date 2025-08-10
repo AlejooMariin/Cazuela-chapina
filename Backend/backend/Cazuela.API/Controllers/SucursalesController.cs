@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CazuelaChapina.Data;
 using CazuelaChapina.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CazuelaChapina.Controllers
 {
@@ -30,9 +28,7 @@ namespace CazuelaChapina.Controllers
             var sucursal = await _context.Sucursales.FindAsync(id);
 
             if (sucursal == null)
-            {
                 return NotFound();
-            }
 
             return sucursal;
         }
@@ -50,9 +46,7 @@ namespace CazuelaChapina.Controllers
         public async Task<IActionResult> PutSucursal(int id, Sucursal sucursal)
         {
             if (id != sucursal.Id)
-            {
                 return BadRequest();
-            }
 
             _context.Entry(sucursal).State = EntityState.Modified;
 
@@ -63,13 +57,9 @@ namespace CazuelaChapina.Controllers
             catch (DbUpdateConcurrencyException)
             {
                 if (!_context.Sucursales.Any(e => e.Id == id))
-                {
                     return NotFound();
-                }
                 else
-                {
                     throw;
-                }
             }
 
             return NoContent();
@@ -80,9 +70,7 @@ namespace CazuelaChapina.Controllers
         {
             var sucursal = await _context.Sucursales.FindAsync(id);
             if (sucursal == null)
-            {
                 return NotFound();
-            }
 
             _context.Sucursales.Remove(sucursal);
             await _context.SaveChangesAsync();

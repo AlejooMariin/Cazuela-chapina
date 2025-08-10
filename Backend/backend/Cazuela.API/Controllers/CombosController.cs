@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CazuelaChapina.Data;
 using CazuelaChapina.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace CazuelaChapina.Controllers
 {
@@ -36,9 +34,7 @@ namespace CazuelaChapina.Controllers
                 .FirstOrDefaultAsync(c => c.Id == id);
 
             if (combo == null)
-            {
                 return NotFound();
-            }
 
             return combo;
         }
@@ -56,9 +52,7 @@ namespace CazuelaChapina.Controllers
         public async Task<IActionResult> PutCombo(int id, Combo combo)
         {
             if (id != combo.Id)
-            {
                 return BadRequest();
-            }
 
             _context.Entry(combo).State = EntityState.Modified;
 
@@ -68,14 +62,10 @@ namespace CazuelaChapina.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ComboExists(id))
-                {
+                if (!_context.Combos.Any(e => e.Id == id))
                     return NotFound();
-                }
                 else
-                {
                     throw;
-                }
             }
 
             return NoContent();
@@ -86,19 +76,12 @@ namespace CazuelaChapina.Controllers
         {
             var combo = await _context.Combos.FindAsync(id);
             if (combo == null)
-            {
                 return NotFound();
-            }
 
             _context.Combos.Remove(combo);
             await _context.SaveChangesAsync();
 
             return NoContent();
-        }
-
-        private bool ComboExists(int id)
-        {
-            return _context.Combos.Any(e => e.Id == id);
         }
     }
 }
