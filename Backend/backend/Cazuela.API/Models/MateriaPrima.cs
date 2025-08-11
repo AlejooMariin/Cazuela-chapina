@@ -1,3 +1,6 @@
+
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Text.Json.Serialization;
 namespace CazuelaChapina.Models
 {
     public enum MateriaPrimaTipo { Masa, Hoja, Proteina, Grano, Endulzante, Especia }
@@ -17,7 +20,10 @@ namespace CazuelaChapina.Models
     {
         public int Id { get; set; }
         public int MateriaPrimaId { get; set; }
-        public MateriaPrima MateriaPrima { get; set; }
+
+        [JsonIgnore]
+        public MateriaPrima? MateriaPrima { get; set; }
+
         public decimal Cantidad { get; set; }
         public string TipoMovimiento { get; set; } // Entrada, Salida, Merma
         public DateTime Fecha { get; set; }

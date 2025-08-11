@@ -4,6 +4,7 @@ using CazuelaChapina.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cazuela.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250811012340_Inicialss")]
+    partial class Inicialss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -262,7 +265,7 @@ namespace Cazuela.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BebidaId")
+                    b.Property<int>("BebidaId")
                         .HasColumnType("int");
 
                     b.Property<int>("Cantidad")
@@ -271,7 +274,7 @@ namespace Cazuela.API.Migrations
                     b.Property<decimal>("PrecioUnitario")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("TamalId")
+                    b.Property<int>("TamalId")
                         .HasColumnType("int");
 
                     b.Property<int?>("VentaId")
@@ -331,12 +334,14 @@ namespace Cazuela.API.Migrations
                     b.HasOne("CazuelaChapina.Models.Bebida", "Bebida")
                         .WithMany()
                         .HasForeignKey("BebidaId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("CazuelaChapina.Models.Tamal", "Tamal")
                         .WithMany()
                         .HasForeignKey("TamalId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("CazuelaChapina.Models.Venta", null)
                         .WithMany("Items")

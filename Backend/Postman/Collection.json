@@ -15,7 +15,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https//localhost:5250/api/tamales",
+              "raw": "http://localhost:5250/api/tamales",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -24,6 +24,26 @@
               "path": [
                 "api",
                 "tamales"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Tamal by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/tamales/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "tamales",
+                "1"
               ]
             }
           }
@@ -39,7 +59,7 @@
               }
             ],
             "url": {
-              "raw": "https//localhost:5250/api/tamales",
+              "raw": "http://localhost:5250/api/tamales",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -55,6 +75,55 @@
               "raw": "{\n  \"masa\": \"Maíz\",\n  \"relleno\": \"Pollo\",\n  \"envoltura\": \"Hoja de maíz\",\n  \"picante\": true,\n  \"precio\": 20.5\n}"
             }
           }
+        },
+        {
+          "name": "Update Tamal",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5250/api/tamales/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "tamales",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"masa\": \"Maíz\",\n  \"relleno\": \"Cerdo\",\n  \"envoltura\": \"Hoja de plátano\",\n  \"picante\": false,\n  \"precio\": 22.0\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Tamal",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/tamales/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "tamales",
+                "1"
+              ]
+            }
+          }
         }
       ]
     },
@@ -67,7 +136,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https//localhost:5250/api/bebidas",
+              "raw": "http://localhost:5250/api/bebidas",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -76,6 +145,26 @@
               "path": [
                 "api",
                 "bebidas"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Bebida by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/bebidas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "bebidas",
+                "1"
               ]
             }
           }
@@ -91,7 +180,7 @@
               }
             ],
             "url": {
-              "raw": "https//localhost:5250/api/bebidas",
+              "raw": "http://localhost:5250/api/bebidas",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -107,6 +196,55 @@
               "raw": "{\n  \"tamano\": 0,\n  \"tipo\": 1,\n  \"endulzadoCon\": 0,\n  \"toppingAdicional\": 1,\n  \"precio\": 15.0\n}"
             }
           }
+        },
+        {
+          "name": "Update Bebida",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5250/api/bebidas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "bebidas",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"tamano\": 1,\n  \"tipo\": 2,\n  \"endulzadoCon\": 1,\n  \"toppingAdicional\": 0,\n  \"precio\": 18.0\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Bebida",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/bebidas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "bebidas",
+                "1"
+              ]
+            }
+          }
         }
       ]
     },
@@ -119,7 +257,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https//localhost:5250/api/productos",
+              "raw": "http://localhost:5250/api/productos",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -128,6 +266,26 @@
               "path": [
                 "api",
                 "productos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Producto by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/productos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "productos",
+                "1"
               ]
             }
           }
@@ -143,7 +301,7 @@
               }
             ],
             "url": {
-              "raw": "https//localhost:5250/api/productos",
+              "raw": "http://localhost:5250/api/productos",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -157,6 +315,55 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"nombre\": \"Tamal Pollo\",\n  \"descripcion\": \"Tamal tradicional de pollo\",\n  \"precio\": 20.5\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Producto",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5250/api/productos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "productos",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"nombre\": \"Tamal Pollo Modificado\",\n  \"descripcion\": \"Actualizado\",\n  \"precio\": 22.0\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Producto",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/productos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "productos",
+                "1"
+              ]
             }
           }
         }
@@ -292,7 +499,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https//localhost:5250/api/inventario",
+              "raw": "http://localhost:5250/api/inventario/materias-primas",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -300,7 +507,29 @@
               "port": "5250",
               "path": [
                 "api",
-                "inventario"
+                "inventario",
+                "materias-primas"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Materia Prima by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/inventario/materias-primas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "inventario",
+                "materias-primas",
+                "1"
               ]
             }
           }
@@ -316,7 +545,7 @@
               }
             ],
             "url": {
-              "raw": "https//localhost:5250/api/inventario",
+              "raw": "http://localhost:5250/api/inventario/materias-primas",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -324,12 +553,134 @@
               "port": "5250",
               "path": [
                 "api",
-                "inventario"
+                "inventario",
+                "materias-primas"
               ]
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"nombre\": \"Masa de Maíz\",\n  \"cantidad\": 100,\n  \"unidad\": \"kg\"\n}"
+              "raw": "{\n  \"tipo\": 0,\n  \"nombre\": \"Masa de Maíz\",\n  \"cantidadDisponible\": 100,\n  \"unidadMedida\": \"kg\",\n  \"costoPromedio\": 10.50\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Materia Prima",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5250/api/inventario/materias-primas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "inventario",
+                "materias-primas",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"tipo\": 0,\n  \"nombre\": \"Masa de Maíz Modificada\",\n  \"cantidadDisponible\": 150,\n  \"unidadMedida\": \"kg\",\n  \"costoPromedio\": 11.00\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Materia Prima",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/inventario/materias-primas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "inventario",
+                "materias-primas",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get All Movimientos Inventario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/inventario/movimientos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "inventario",
+                "movimientos"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Movimiento Inventario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5250/api/inventario/movimientos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "inventario",
+                "movimientos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"materiaPrimaId\": 1,\n  \"cantidad\": 50,\n  \"tipoMovimiento\": \"Entrada\",\n  \"fecha\": \"2025-08-10T12:00:00\",\n  \"costoUnitario\": 10.5\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Movimiento Inventario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/inventario/movimientos/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "inventario",
+                "movimientos",
+                "1"
+              ]
             }
           }
         }
@@ -344,7 +695,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https//localhost:5250/api/sucursales",
+              "raw": "http://localhost:5250/api/sucursales",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -353,6 +704,26 @@
               "path": [
                 "api",
                 "sucursales"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Sucursal by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/sucursales/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "sucursales",
+                "1"
               ]
             }
           }
@@ -368,7 +739,7 @@
               }
             ],
             "url": {
-              "raw": "https//localhost:5250/api/sucursales",
+              "raw": "http://localhost:5250/api/sucursales",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -384,6 +755,55 @@
               "raw": "{\n  \"nombre\": \"Sucursal Central\",\n  \"direccion\": \"Av. Principal #123\",\n  \"telefono\": \"555-123456\"\n}"
             }
           }
+        },
+        {
+          "name": "Update Sucursal",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5250/api/sucursales/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "sucursales",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"nombre\": \"Sucursal Central Modificada\",\n  \"direccion\": \"Av. Secundaria #456\",\n  \"telefono\": \"555-654321\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Sucursal",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/sucursales/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "sucursales",
+                "1"
+              ]
+            }
+          }
         }
       ]
     },
@@ -396,7 +816,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https//localhost:5250/api/ventas",
+              "raw": "http://localhost:5250/api/ventas",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -405,6 +825,26 @@
               "path": [
                 "api",
                 "ventas"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Venta by Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/ventas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "ventas",
+                "1"
               ]
             }
           }
@@ -420,7 +860,7 @@
               }
             ],
             "url": {
-              "raw": "https//localhost:5250/api/ventas",
+              "raw": "http://localhost:5250/api/ventas",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -434,6 +874,55 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"fecha\": \"2025-08-10T12:00:00\",\n  \"sucursalId\": 1,\n  \"total\": 250.00,\n  \"items\": [\n    {\n      \"productoId\": 1,\n      \"cantidad\": 2,\n      \"precioUnitario\": 50.00\n    },\n    {\n      \"productoId\": 2,\n      \"cantidad\": 3,\n      \"precioUnitario\": 50.00\n    }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Venta",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5250/api/ventas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "ventas",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"fecha\": \"2025-08-10T14:00:00\",\n  \"sucursalId\": 1,\n  \"total\": 300.00,\n  \"items\": [\n    {\n      \"productoId\": 1,\n      \"cantidad\": 3,\n      \"precioUnitario\": 50.00\n    }\n  ]\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Venta",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5250/api/ventas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5250",
+              "path": [
+                "api",
+                "ventas",
+                "1"
+              ]
             }
           }
         }

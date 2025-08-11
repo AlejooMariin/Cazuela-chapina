@@ -4,6 +4,7 @@ using CazuelaChapina.Data;
 using CazuelaChapina.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CazuelaChapina.Dtos;
 
 namespace CazuelaChapina.API.Controllers
 {
@@ -45,10 +46,26 @@ namespace CazuelaChapina.API.Controllers
 
         // POST: api/combos
         [HttpPost]
-        public async Task<ActionResult<Combo>> CrearCombo(Combo combo)
+        public async Task<ActionResult<Combo>> CrearCombo(ComboDto comboDto)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            var tamales = await _context.Tamales
+                .Where(t => comboDto.TamalesIds.Contains(t.Id))
+                .ToListAsync();
+
+            var bebidas = await _context.Bebidas
+                .Where(b => comboDto.BebidasIds.Contains(b.Id))
+                .ToListAsync();
+
+            var combo = new Combo
+            {
+                Tipo = comboDto.Tipo,
+                Nombre = comboDto.Nombre,
+                Descripcion = comboDto.Descripcion,
+                Precio = comboDto.Precio,
+                Editable = comboDto.Editable,
+                Tamales = tamales,
+                Bebidas = bebidas
+            };
 
             _context.Combos.Add(combo);
             await _context.SaveChangesAsync();
@@ -56,32 +73,50 @@ namespace CazuelaChapina.API.Controllers
             return CreatedAtAction(nameof(GetCombo), new { id = combo.Id }, combo);
         }
 
+
         // PUT: api/combos/5  -> Aquí puedes modificar el combo estacional sin redeploy
         [HttpPut("{id}")]
-        public async Task<IActionResult> ActualizarCombo(int id, Combo combo)
+        public async Task<IActionResult> ActualizarCombo(int id, ComboDto comboDto)
         {
-            if (id != combo.Id)
+            if (id != comboDto.Id)
                 return BadRequest(new { mensaje = "Id del combo no coincide" });
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var comboExistente = await _context.Combos.FindAsync(id);
+            var comboExistente = await _context.Combos
+                .Include(c => c.Tamales)
+                .Include(c => c.Bebidas)
+                .FirstOrDefaultAsync(c => c.Id == id);
+
             if (comboExistente == null)
                 return NotFound(new { mensaje = $"Combo con id {id} no encontrado" });
 
             // Actualiza propiedades básicas
-            comboExistente.Nombre = combo.Nombre;
-            comboExistente.Descripcion = combo.Descripcion;
-            comboExistente.Precio = combo.Precio;
+            comboExistente.Nombre = comboDto.Nombre;
+            comboExistente.Descripcion = comboDto.Descripcion;
+            comboExistente.Precio = comboDto.Precio;
+            comboExistente.Editable = comboDto.Editable;
 
-            // Si usas listas relacionadas (Tamales, Bebidas), deberás actualizar con lógica más específica.
-            // Por simplicidad aquí no lo actualizo, pero puedes extender según tu diseño.
+            // Actualizar relaciones Tamales
+            comboExistente.Tamales.Clear();
+            var tamales = await _context.Tamales
+                .Where(t => comboDto.TamalesIds.Contains(t.Id))
+                .ToListAsync();
+            comboExistente.Tamales.AddRange(tamales);
+
+            // Actualizar relaciones Bebidas
+            comboExistente.Bebidas.Clear();
+            var bebidas = await _context.Bebidas
+                .Where(b => comboDto.BebidasIds.Contains(b.Id))
+                .ToListAsync();
+            comboExistente.Bebidas.AddRange(bebidas);
 
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
+
 
         // DELETE: api/combos/5
         [HttpDelete("{id}")]

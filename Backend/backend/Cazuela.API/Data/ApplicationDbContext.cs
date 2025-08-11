@@ -53,6 +53,12 @@ namespace CazuelaChapina.Data
                 .WithMany()
                 .HasForeignKey(vi => vi.BebidaId)
                 .OnDelete(DeleteBehavior.Restrict);
+            
+            modelBuilder.Entity<InventarioMovimiento>()
+                .HasOne(m => m.MateriaPrima)
+                .WithMany()
+                .HasForeignKey(m => m.MateriaPrimaId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
